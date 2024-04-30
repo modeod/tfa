@@ -69,7 +69,8 @@ namespace Application.JobTitleA
             if (jobTitle == null)
                 return OperationResult.Fail("Job title not found.", 404);
 
-            await _jobTitleRepository.DeleteAsync(id);
+            jobTitle.SoftDelete();
+            await _jobTitleRepository.UpdateAsync(jobTitle);
 
             return OperationResult.Ok();
         }

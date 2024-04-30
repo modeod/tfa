@@ -60,15 +60,5 @@ namespace Infrastructure.Repositoies
             _context.Entry(jobTitle).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
-
-        public async Task DeleteAsync(Guid id)
-        {
-            var jobTitle = await _context.JobTitles.FindAsync(id);
-            if (jobTitle != null)
-            {
-                jobTitle.SoftDelete();
-                await _context.SaveChangesAsync();
-            }
-        }
     }
 }

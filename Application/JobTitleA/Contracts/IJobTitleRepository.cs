@@ -10,6 +10,5 @@ namespace Application.JobTitleA.Contracts
         Task<JobTitle?> GetByIdAsync(Guid id);
         Task<JobTitle> AddAsync(JobTitle jobTitle);
         Task UpdateAsync(JobTitle jobTitle);
-        Task DeleteAsync(Guid id);
     }
 }
